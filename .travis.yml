@@ -13,7 +13,7 @@ script:
   - go test -v
 
   # Build
-  - echo "$REGISTRY_PASSWORD" | docker login --username $REGISTRY_USER --password-stdin
+  - echo "$REGISTER_PASSWORD" | docker login --username $REGISTER_USER --password-stdin
   - docker build -f Dockerfile -t romaneso/myhello:latest ./
   - GIT_SHA="$(git rev-parse --short HEAD)"
   - docker tag romaneso/myhello:latest romaneso/myhello:$GIT_SHA

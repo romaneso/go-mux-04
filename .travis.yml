@@ -8,3 +8,10 @@ go:
 script:
   # Test
   - go test -v
+
+  # Build
+  - echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USER --password-stdin
+  - docker build -f Dockerfile -t romaneso/myhello:latest ./
+  - docker tag romaneso/myhello:latest romaneso/myhello:$TRAVIS_COMMIT
+  - docker push romaneso/myhello:latest
+  - docker push romaneso/myhello:$TRAVIS_COMMIT

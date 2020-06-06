@@ -1,7 +1,7 @@
 FROM golang:1.11-alpine
 
 # Set maintainer label: maintainer=[YOUR-EMAIL]
-LABEL maintainer="Simon Angerbauer <simon.angerbauer@gmx.at>"
+LABEL maintainer="Roman Socovka"
 
 # Set working directory: `/src`
 WORKDIR /src
